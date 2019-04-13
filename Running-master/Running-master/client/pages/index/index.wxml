@@ -1,0 +1,96 @@
+<view class="page">
+  <!--页头-->
+  <view class="page__hd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <!--搜索结果栏  -->
+    <view class='searchResult' hidden="{{searchShow == false}}">
+      <view class='searchTitle'>
+        搜索结果
+      </view>
+      <view class='searchLi' wx:for="{{messageSearch}}" wx:key="{{item.id}}"  bindtap='comment' data-id="{{item.planId}}">
+        <text>{{item.nickName}}:</text>{{item.content}}
+        <view class='searchDate'>{{item.date}}</view>
+      </view>
+    </view>
+    <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1500" hidden="{{searchShow == true}}">
+      <block wx:for="{{swiperPic}}" wx:key="idx">
+        <swiper-item>
+          <image src="{{imagePath}}/banner/{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!--body-->
+  <view class="page__bd" hidden="{{searchShow == true}}">
+    <navigator class='main-content' wx:for="{{messageList}}" wx:for-item="item" wx:key="{{item.planId}}" bindtap='comment' data-id="{{item.planId}}" hidden="{{index > indexPage}}">
+      <view class='main-content-title'>
+        <view class='main-content-title-head'>
+          <image src="{{item.avatarUrl}}" data-id="{{item.id}}" data-name="{{item.nickName}}" catchtap='gotowho'></image>
+          <view class='main-content-title-detail'>
+            <text>{{item.nickName}}</text>
+            <image class='sex' src="../../images/{{item.gender==1 ? 'man.png': item.gender==2 ? 'woman.png':'n.png'}}"></image>
+            <view class='main-content-title-detail-footer'>
+              <text>{{item.date}}\t</text>
+              <text>{{item.time}}\n</text>
+              <text wx:if="{{item.school}}">来自[{{item.school}}]</text>
+              <text wx:else>\n</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='main-content-body'>
+        <view class='main-content-body-text'>
+          {{item.content}}
+        </view>
+        <view class='main-content-body-pic'>
+          <view class='main-content-body-pic-box' wx:for="{{item.indexPic}}" wx:for-item="itemPic" wx:for-index="picIndex" wx:if="{{picIndex<item.showPic &&item.indexPic != ''}}" wx:key="id">
+            <image src='{{itemPic}}' catchtap='viewPic' data-src='{{itemPic}}' data-index="{{index}}" mode="aspectFill">
+            </image>
+          </view>
+          <view wx:if="{{item.indexPic.length > 3 && item.showPic == 3}}" class='otherPic' data-index="{{index}}" catchtap="showAllPic">+{{item.indexPic.length - 3}}</view>
+        </view>
+        <view class='main-content-body-address' wx:if="{{item.planAddress != '请选择约跑地点'}}">
+          <image src='{{imagePath}}/index-address.png'></image>
+          <text>{{item.planAddress}}</text>
+        </view>
+      </view>
+      <!--conter footer  -->
+      <view class='main-content-footer weui-flex'>
+        <button class='weui-flex__item' catchtap='123' open-type='share' data-id="{{item.planId}}">
+          <image src='{{imagePath}}/index-hand.png'></image>分享</button>
+        <button class='weui-flex__item' catchtap='comment' data-id="{{item.planId}}">
+          <image src='{{imagePath}}/index-message.png'></image>{{item.commentNumber}}</button>
+      </view>
+    </navigator>
+    <!--加载条  -->
+    <view class="weui-loadmore" hidden="{{loadMore == 0}}">
+        <view class="weui-loading"></view>
+        <view class="weui-loadmore__tips">正在加载</view>
+    </view>
+    <view class="weui-loadmore weui-loadmore_line" hidden="{{loadMore == 1}}">  
+      <view class="weui-loadmore__tips weui-loadmore__tips_in-line loadmore">暂无数据</view>
+    </view> 
+    <!--conetent end  -->
+  </view>
+  <!--body end  -->
+</view>
+
+<!--发表评论按钮  -->
+<view class='commentBtn' bindtap='havePlan'>
+  <image src='{{imagePath}}/index-addComment.png'></image>
+</view>

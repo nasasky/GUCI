@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+
+<form bindsubmit="bindFormSubmit">
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="https://modao.cc/uploads3/images/1144/11440791/thumb_raw_1501298252.png" mode="aspectFit"></image>
+  </view>
+  <view class="cont_a">
+    <image class='png' src="../../images/iphone.png"></image>
+    <image class='img' src="../../images/xie.png"></image>
+    <input class="int" placeholder="请输入手机号码"  type="number" maxlength="11" name="cb" />
+  </view>
+  <view class="cont_a" style="margin-bottom:70rpx">
+    <image class='png' src="../../images/suo.png"></image>
+    <image class='img' src="../../images/xie.png"></image>
+    <input class="int" password='true'  placeholder="请输入密码" name="cd" />
+  </view>
+  <button class="ren" form-type="submit">登录</button>
+    </form>
+  <view class="ce" bindtap="zhuche">快速注册</view>
+  <view class="ce">忘记密码</view>
+
+
+</view>

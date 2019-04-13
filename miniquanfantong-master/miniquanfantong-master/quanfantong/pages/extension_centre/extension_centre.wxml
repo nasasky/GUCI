@@ -1,0 +1,76 @@
+<view class="cont">
+  <!--红色-->
+  <view class="cont_two">
+    <view class="cont_lei">
+      <text>累计佣金:{{total}}(元)</text>
+      <text style="float:right"></text>
+    </view>
+    <!--提现佣金-->
+    <view class="yongjin">
+      <text>可提现佣金（元）</text>
+      <view class="yongjin_yuan">
+        <text style="flex:1">{{info.distribut_money}} </text>
+        <view class="yongjin_ti" bindtap="ti">提现</view>
+      </view>
+    </view>
+  </view>
+
+
+
+<!--头部-->
+<view class="tab-left" bindtap="tabFun">
+  <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0">已获得</view>
+  <text style="color:#ccc">|</text>
+  <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-id="1">已提现</view>
+</view>
+
+<view class="tab-right">
+
+  <view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+
+    <view class="boxx" wx:for="{{huode}}">
+      <view class="png">
+        <image src="../../images/jin.png"></image>
+
+      </view>
+      <view class="fss">
+        xxx注册{{item.type}}获得￥{{item.money}}
+
+      </view>
+      <view class="riqi">
+        获得日期：{{item.addtime}}</view>
+
+    </view>
+
+  </view>
+  <view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+
+    <view class="boxx" wx:for="{{tixian}}">
+      <view class="png">
+        <image src="../../images/jin.png"></image>
+
+      </view>
+      <view class="fss">
+        于{{item.addtime}}提现￥{{item.money}}
+
+      </view>
+      <view class="riqi">
+        提现日期：{{item.addtime}}</view>
+
+    </view>
+
+
+
+  </view>
+
+
+</view>
+
+
+</view>
+
+
+
+
+
+

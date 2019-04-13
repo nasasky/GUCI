@@ -1,0 +1,60 @@
+<view class="page">
+
+<image class="jj" src="{{info.kfbanner}}"></image>
+<button class="kk" type="default" bindtap="calling">拨打电话</button>
+
+<button class="kk" type="default">在线客服</button>
+
+<view class="classname">
+<contact-button type="default-light"size="20" session-from="weapp"
+ class='kkk'>
+</contact-button>
+<contact-button type="default-light"size="20" session-from="weapp"
+ class='kkk'>
+</contact-button>
+<contact-button type="default-light"size="20" session-from="weapp"
+ class='kkk'>
+</contact-button>
+<contact-button type="default-light"size="20" session-from="weapp"
+ class='kkk'>
+</contact-button>
+<contact-button type="default-light"size="20" session-from="weapp"
+ class='kkk'>
+</contact-button>
+</view>
+
+
+
+<view class="botton">
+  <image class="botton_img" src="../../images/bottom.png"></image>
+      <view class="botton_tou" bindtap="setModalStatus" data-status="1">
+      投诉/建议
+      </view>
+</view>
+
+
+
+<view class="drawer_screen" bindtap="setModalStatus" data-status="0" wx:if="{{showModalStatus}}"></view>
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+<view class="close_icon" bindtap="setModalStatus" data-status="0">×</view>
+ 
+ 
+  <view class="drawer_attr_content">
+    <view class="text_center">
+        <view class="section">
+          <form bindsubmit="bindFormSubmit">
+            <view style="font-size:26rpx">联系方式:</view><input name="tel" style="border:1px solid #ccc;width:100%" type="text" placeholder-style='font-size:26rpx;' class="weui-input" placeholder="请填写您的联系方式" />
+            <textarea placeholder-style='font-size:26rpx;' maxlength='100' placeholder="请输入你需要的内容(限100字)" name="message"/>
+            <button form-type="submit">提交申请 </button>
+          </form>
+        </view>
+
+      </view>
+      </view>
+   </view>
+
+
+
+
+
+</view>

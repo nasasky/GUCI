@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item.photo}}" class="slide-image" width="100%" height="180" />
+      </swiper-item>
+    </block>
+  </swiper>
+
+
+  <view class="tui">全反平台</view>
+
+<view class="container_a" wx:for="{{sitelist}}" bindtap="site" data-id="{{item.id}}">
+    <!--1-->
+    <view class="con_aa">
+       <image src="{{item.logo}}"></image>
+    </view>
+    <!--2-->
+   <view class="con_bb">
+      <text>{{item.name}}</text>
+      <view class="con_bb_zi">
+{{item.digest}}    
+   </view>
+   </view>
+<!--3-->
+   <view class="con_cc">
+      <view class="con_cc_fen">{{item.score}}</view> 
+      <text>推荐指数</text>
+   </view>
+</view>
+
+<view class="less" bindtap="getMore">查看更多</view>
+
+
+</view>

@@ -1,0 +1,95 @@
+/*供求*/
+
+.tab {
+  flex-direction: row;
+  width: 100%;
+}
+
+.tab-left {
+  width: 100%;
+  line-height: 160%;
+  font-size: 34rpx;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.tab-left view {
+  text-align: center;
+  display: inline-block;
+  width: 50%;
+  padding: 15rpx 0;
+  font-size: 30rpx;
+}
+
+.tab-left .active {
+  color: #f00;
+}
+
+.tab-right {
+  line-height: 100%;
+
+  /*border-bottom: 1rpx solid #e6e6e6;*/
+}
+
+.tab-right .right-item {
+  display: none;
+}
+
+.tab-right .right-item.active {
+  display: block;
+}
+.hk{
+  width: 100%;
+  height: 200rpx;
+  background: #36648B;
+  color: #fff;
+  font-size: 30rpx;
+}
+.hk{
+  padding: 30rpx;
+}
+.hk_two{
+  padding: 40rpx 0;
+  font-size: 60rpx;
+}
+.src{
+  width: 30rpx;
+  height: 30rpx;
+
+}
+.pk{
+    width: 100%;
+    height:50rpx;
+      font-size: 30rpx;
+      padding-top: 40rpx;
+      padding-left: 20rpx;
+}
+.pkk{
+      width: 100%;
+    height:250rpx;
+}
+.a{
+  border: 1px solid #ccc;
+  /*padding-left:20rpx ;*/
+  margin: 20rpx;
+  height: 50rpx;
+  padding: 10rpx;
+}
+.ki{
+  background: #e6e6e6;
+  height: 20rpx;
+}
+.jk{
+  padding: 20rpx;
+}
+.jk_l{
+  padding: 20rpx 0;
+  line-height: 40rpx;
+  font-size: 30rpx;
+}
+button{
+  background:#EE5C42;
+  color: #fff;
+  margin: 50rpx 0;
+}
+
+

@@ -1,0 +1,230 @@
+/* 页面总配置  */
+page{
+  display: block;
+  background-color: #f3f6f8;
+  min-height: 100%;
+  font-size: 14px;
+  font-family: "微软雅黑";  
+}
+/* 轮播图模块  */
+.slide-image{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+/* 主体内容 */
+.page__bd{
+  margin-top: 15px;
+}
+/*需求内容模块  */
+.main-content{
+  margin-top: 15px;
+  background-color: #fff;
+}
+.main-content-title{
+  padding-left: 10px;
+  padding-top: 10px;
+  display: flex;
+}
+
+.main-content-title-head{
+  flex: 2;
+}
+.main-content-title-head>image{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  vertical-align: text-bottom;
+  position: relative;
+  top: -10px;
+}
+.main-content-title-detail{
+  display: inline-block; 
+}
+.main-content-title-detail>image{
+  width: 24rpx;
+  height: 24rpx;
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
+}
+.main-content-title-detail>text{
+  margin-left: 10px;
+  color:#333;
+}
+.main-content-title-detail-footer{
+  font-size: 26rpx;
+  margin-left: 10px;
+  color:#aaaaaa;
+}
+.main-content-body{
+  margin-top: 10px;
+}
+.main-content-body-text{
+  text-indent:2em;
+  font-size: 30rpx;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333;
+}
+.main-content-body-pic{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.main-content-body-pic-box{
+  flex: 1;
+  overflow: hidden;
+  min-height: 120px;
+  min-width: 33%;
+  max-height: 120px;
+  max-width: 33%;
+}
+.main-content-body-pic image{
+  border-left:4px solid #fff;
+  border-top: 4px solid #fff; 
+  width: 100%;
+  height: 100%;
+}
+.main-content-body-address{
+  margin-left: 28rpx;
+  font-size: 22rpx;
+  color:#aaaaaa;
+}
+.main-content-body-address image{
+  width: 15px;
+  height:15px;
+  position: relative;
+  top: 2px;
+}
+.main-content-footer{
+  margin-top: 10px;
+  border-top:1px dashed #ebebeb;
+}
+.main-content-footer image{
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  position: relative;
+  top: 3px;
+}
+.main-content-footer>button{
+ background-color: #fff;
+ line-height: 2.5;
+ color:#98adc0;
+ font-size: 14px;
+}
+.main-content-footer>button::after{
+  border: none;
+}
+.otherPic{
+  position: absolute;
+  right: 5px;
+  width: 240rpx;
+  height: 80px;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.4);
+  text-align: center;
+  color: #fff;
+  font-size: 50rpx;
+  padding-top: 37px;
+  margin-top: 3px;
+}
+
+/*模态框模块  */
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+.modal-dialog {
+  width: 540rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  background: #fff;
+  margin: -180rpx 105rpx;
+  border-radius: 14rpx;
+}
+.modal-title {
+  padding-top: 15rpx;
+  padding-bottom: 15rpx;
+  font-size: 30rpx;
+  text-align: align;
+  padding-left: 30rpx;
+  background-color: #efefef;
+  color: #777;
+  font-family: "微软雅黑";
+}
+.modal-text{
+  padding-top:15rpx;
+  padding-left:32rpx;
+  padding-bottom:15rpx;
+  border-top: 1px solid #efefef;
+}
+
+/*添加评论按钮  */
+.commentBtn{
+  position: fixed;
+  right: 15px;
+  bottom: 10px;
+}
+
+.commentBtn image{
+  width: 40px;
+  height: 40px;
+}
+
+.navigator-hover {
+    /* background-color: rgba(0, 0, 0,0);    */
+   opacity: 0.4;
+
+}
+
+.loadmore{
+  background-color: #f3f6f8;
+}
+
+.searchResult{
+  margin: 0 auto;
+  width: 90%;
+}
+
+.searchTitle{
+  border-bottom: 1px solid #dfdfdf;
+  padding: 5px 0 ;
+  color:#999;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+.searchLi{
+  background-color: #fff;
+  margin-top: 10px;
+  padding: 10px 0 10px 10px;
+  color: #999;
+  font-size: 24rpx;
+}
+.searchLi text{
+  font-size: 24rpx;
+   font-weight: blod; 
+  color:#FF00FF;
+  margin-right: 10px;
+}
+.searchDate{
+  text-align: right;
+  margin-right: 15px;
+}

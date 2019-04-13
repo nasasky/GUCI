@@ -1,0 +1,6 @@
+@import "/pages/video/videolist/videolist-template.wxss";
+
+.videos-template {
+  margin-bottom: 30rpx;
+  background-color: #f2f2f2;
+}

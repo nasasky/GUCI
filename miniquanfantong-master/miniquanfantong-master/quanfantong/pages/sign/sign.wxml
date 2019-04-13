@@ -1,0 +1,60 @@
+<!--index.wxml-->
+<view class="container">
+<form bindsubmit="bindFormSubmit">
+
+  <view bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="https://modao.cc/uploads3/images/1144/11440791/thumb_raw_1501298252.png" mode="aspectFit"></image>
+  </view>
+  <view class="cont_a">
+    <image class='png' src="../../images/iphone.png"></image>
+    <image class='img' src="../../images/xie.png"></image>
+    <input class="int" placeholder="请输入手机号码"   type="number" maxlength="11" name="phone" bindblur="blurTel"/>
+  </view>
+  <!-- <view class="cont_a" style="margin-bottom:70rpx">
+    <image class='png' src="../../images/suo.png"></image>
+    <image class='img' src="../../images/xie.png"></image>
+    <input password='true' class="int" placeholder="请输入密码" name="password"/>
+  </view> -->
+
+  <view class="cont_a" style="margin-bottom:70rpx">
+    <image class='png' src="../../images/suo.png"></image>
+    <image class='img' src="../../images/xie.png"></image>
+    <input class="int" placeholder-class='input-placeholder' class="ks" type="number" name="yzcode"  value="{{agentTel}}"  maxlength="11" placeholder="请输入验证码" name="ce"/>
+  <view class="zc" hidden="{{lol}}">  </view>
+    <view class="ji" bindtap="setVerify">
+       {{VerifyCode}}
+    </view>
+  </view>
+<!-- <view class="shuoming">
+<checkbox-group class="group" bindchange="checkboxChange">
+    <view class="label-1" wx:for-items="{{checkboxItems}}">
+        <label>
+            <checkbox hidden value="{{item.name}}" checked="{{item.checked}}"></checkbox> -->
+            <!-- <view class="label-1__icon">
+                <view class="label-1__icon-checked" style="opacity:{{item.checked ? 1: 0}}"></view>
+            </view> -->
+        <!-- </label> -->
+        <!-- <text class="label-1__text">{{item.value}}</text><text class="label-2__text" style="color:#7171C6" bindtap="powerDrawer" data-statu="open">【服务条款】</text> -->
+    <!-- </view>
+</checkbox-group>
+</view> -->
+      <button class="ren" form-type="submit">绑定</button>
+      </form>
+</view>
+<!--mask-->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view> 
+<!--content-->
+<!--使用animation属性指101定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}"> 
+  
+ <!--drawer content-->
+ <view class="drawer_title"> 免责声明</view> 
+ <view class="drawer_content">
+     {{content}}
+ </view> 
+ <view class="btn_ok" data-statu="close"  bindtap="powerDrawer" data-statu="close" data-otype="3">已了解</view> 
+
+</view>
+
+
+

@@ -1,0 +1,37 @@
+<!--logs.wxml-->
+<view class="container markContainer">
+  <view wx:if="{{zhichu}}" class="book">
+    <text catchtap="inOutChange" data-switch="{{true}}" class="bookItem {{inOutSwitch?'bookItemSelected':''}}">收入</text>
+    <text catchtap="inOutChange" data-switch="{{false}}" class="bookItem {{inOutSwitch?'':'bookItemSelected'}}">支出</text>
+  </view>
+  <view class="preview">
+    <view class='previewType'>
+      <image src="{{typeIconSrcSelected}}"/>
+      <text class="typeSelected">{{typeNameSelected}}</text>
+    </view>
+    <text class="inputMoney"> ¥ <text class="inputMoneyNumber">{{inputMoney}}</text></text>
+  </view>
+  <view class="type">
+    <block wx:for="{{typeItem}}" wx:key="{{item.code}}">
+      <view catchtap="changeType"  data-type-icon-src="{{item.iconUrl}}" data-type-code="{{item.code}}" data-type-name="{{item.name}}" data-type-bg-color="{{item.background}}" class="typeItem">
+        <image class="typeIcon" src="{{item.iconUrl}}" />
+        <text class="typeName">{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  <view class="note">
+    <image src="{{noteIconSrc}}"/>
+  </view>
+  <view class="calculate">
+    <view class="calculatePanel">
+      <block wx:for="{{calculateKey}}" wx:key="{{item.code}}">
+        <view catchtap="inputMoney" data-input-number="{{item.code}}" class="calculateKeyItem">
+          <text class="calculateKeyItemText">{{item.text}}</text>
+        </view>
+      </block>
+    </view>
+    <view catchtap="saveCharge" class="calculateOK">
+      <text>OK</text>
+    </view>
+  </view>
+</view>

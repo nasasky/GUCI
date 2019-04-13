@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/sum/sum",
+    "pages/mark/mark",
+    "pages/recordChange/recordChange"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Omega",
+    "navigationBarTextStyle":"black"
+  }
+}

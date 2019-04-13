@@ -1,0 +1,46 @@
+<!--pages/home/home.wxml-->
+<import src="../tpls/products/products-tpl.wxml"/>
+<!-- 首页home页面 开始 -->
+<view class="container">
+<!-- 首页顶部区域 开始-->
+   <!-- 首页轮播图 所在结构:顶部 -->
+   <swiper indicator-dots="true" autoplay="true" class="swiper">
+        <block wx:for="{{bannerArr}}" wx:key="id">
+            <swiper-item class="banner-item" data-id="{{item.key_word}}" bindtap="onProductsItemTap">
+                <image src="{{item.img.url}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+<!-- 首页顶部区域 结束 -->
+    
+<!-- 首页中间主体躯干区域 开始 -->
+    <view class="home-main">
+        <!-- 精选主题区域 开始 -->
+        <view class="home-main-theme">
+            <view class="home-main-header">精选主题</view> 
+            <view class="theme-box">
+                <block wx:for="{{themeArr}}" wx:key="id">
+                    <view wx:if="{{index==2}}" class="theme-item big" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="onThemesItemTap">
+                        <image src="{{item.topic_img.url}}"></image>
+                    </view>
+                    <view wx:else class="theme-item" data-id="{{item.id}}" data-name="{{item.name}}" bindtap="onThemesItemTap">
+                        <image src="{{item.topic_img.url}}"></image>
+                    </view>                            
+                </block>
+                  
+            </view>     
+        </view>
+        <!-- 精选主题区域 结束 -->
+
+        <!-- 最近新品区域 开始 -->
+        <view class="home-main-products">
+            <view class="home-main-header">最近新品</view>
+            <template is="products" data="{{products:productsArr}}"></template>
+        </view>
+        <!-- 最近新品区域 结束 -->
+        
+    </view> 
+<!-- 首页中间主体躯干区域 结束 -->   
+    
+<!-- 首页home页面 结束 -->
+</view>

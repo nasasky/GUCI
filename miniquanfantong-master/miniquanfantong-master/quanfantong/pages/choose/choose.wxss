@@ -1,0 +1,146 @@
+.kk{
+
+position:relative;
+display:block;
+margin-left:auto;
+margin-right:auto;
+padding-left:14px;
+padding-right:14px;
+box-sizing:border-box;
+font-size:14px;
+text-align:center;
+text-decoration:none;
+line-height:2.55555556;
+border-radius:5px;
+-webkit-tap-highlight-color:transparent;
+overflow:hidden;
+color:#000000;
+background-color:#F8F8F8;
+width:43%;
+margin: 20rpx 25rpx; float: left;
+}
+.jj{
+    width: 100%;
+    height: 370rpx;
+   
+}
+
+.classname{
+position:relative;
+top:-73rpx;
+right:91rpx;
+width:200rpx;
+display:inline-block;
+float:right;
+opacity: 0;
+
+}
+image{
+  overflow: initial
+}
+.botton {
+  width: 186px;
+  height: 186px;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  bottom:7%;
+left: 50%;
+margin-left: -93px;
+
+}
+.page{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+page{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+.botton_img{
+width: 100%;
+height: 100%;
+}
+.botton_tou{
+  font-size: 30rpx;
+  color: #999;
+
+
+}
+
+
+/*弹窗*/
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.drawer_attr_box {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+
+.close_icon {
+  width: 25rpx;
+  height: 25rpx;
+  line-height: 20rpx;
+  font-size: 30rpx;
+  position: absolute;
+  right: 5rpx;
+  top:5rpx;
+  padding: 10rpx;
+  color: #ccc;
+  /*border: 1rpx solid #ccc;*/
+  border-radius: 50%;
+  text-align: center;
+  background: #fff;
+}
+
+
+.drawer_attr_content {
+  padding: 20rpx;
+  height: 600rpx;
+  overflow-y: scroll;
+}
+button{
+position:relative;
+display:block;
+margin-left:auto;
+margin-right:auto;
+padding-left:14px;
+padding-right:14px;
+box-sizing:border-box;
+font-size:14px;
+text-align:center;
+text-decoration:none;
+line-height:2.55555556;
+border-radius:5px;
+-webkit-tap-highlight-color:transparent;
+overflow:hidden;
+color:#000000;
+background-color:#F8F8F8;
+width:43%;
+}
+ textarea{
+   width: 100%;
+   margin-top: 20rpx;
+   border: 1px solid #ccc;
+   margin-bottom: 20rpx;
+   padding: 5rpx;
+   font-size: 32rpx;
+}

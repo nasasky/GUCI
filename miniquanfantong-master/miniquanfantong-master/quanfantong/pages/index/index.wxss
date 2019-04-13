@@ -1,0 +1,105 @@
+/**index.wxss**/
+
+page {
+  background: #fff;
+  font-family: '微软雅黑';
+}
+
+swiper {
+  width: 100%;
+  height: 320rpx;
+}
+
+.swiper-item {
+  display: block;
+  height: 320rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 320rpx;
+}
+
+.tui {
+  text-align: left;
+  width: 100%;
+  padding-left: 50rpx;
+  font-size: 35rpx;
+  margin: 20rpx 0;
+  font-weight: 700;
+}
+
+.container_a {
+  width: 100%;
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+  padding-top: 10rpx;
+}
+
+.con_aa {
+  flex: 0.3;
+  text-align: center;
+  display: flex;
+  /*align-items: center;*/
+  justify-content: center;
+}
+
+.con_aa image {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.con_bb {
+  flex: 0.5;
+}
+
+.con_bb text {
+  font-size: 35rpx;
+  font-weight: 700;
+  padding: 0 20rpx;
+}
+
+.con_bb_zi {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  width: 332rpx;
+  /*margin: 0 auto;*/
+  margin: 20rpx;
+  margin-top: 10rpx;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 2; /** 显示的行数 **/
+  overflow: hidden; /** 隐藏超出的内容 **/
+}
+
+.con_cc {
+  flex: 0.2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.con_cc text {
+  font-size: 25rpx;
+  color: #ff4d00;
+}
+
+.con_cc_fen {
+  font-size: 68rpx;
+  color: #e51c23;
+}
+
+.less {
+  width: 50%;
+  text-align: center;
+  border: 1rpx solid #ccc;
+  color: #999;
+  border-radius: 60rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  margin-top: 30rpx;
+}

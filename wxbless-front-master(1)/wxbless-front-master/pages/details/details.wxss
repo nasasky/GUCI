@@ -1,0 +1,143 @@
+/* pages/details/details.wxss */
+
+.music-v{
+  height: 110rpx;
+}
+
+.height{
+  height: 30rpx;
+}
+
+.detail-bg-img{
+  width: 100%;
+  height: 100%;
+  background: #eee;
+
+}
+.detail-bg-img-box{
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  position: fixed;
+  z-index: 100;
+}
+.detail-bg-img-box2{
+  width: 100%;
+  height: 100%;
+   background-color: rgba(198,190,181, 0.7);  
+  /*高斯模糊  */
+   filter: blur(50px); 
+  position: fixed;
+  z-index: 105;
+}
+
+
+.txt-box{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 110;
+}
+
+.music-img{
+  width: 70rpx;
+  /* height: 70rpx; */
+  border-radius: 50%;
+  float: right;
+  margin-top: 40rpx;
+  margin-right: 30rpx;
+}
+.clear{
+  clear: both;
+}
+
+.form-v{
+  width: 100%;
+}
+.bless-title{
+  text-align: center;
+  display: block;
+  letter-spacing: 4rpx;
+  font-size: 34rpx;
+  color:#a8a8a8;
+  /* text-shadow:0rpx 0rpx 20rpx #CD9B1D; */
+  font-weight: 500;
+  /* margin-top: 30rpx; */
+}
+.input-box{
+  margin-top: 100rpx;
+  text-align: center;
+}
+.input-name{
+  /* border: 1px solid #5E5E5E; */
+  border-radius: 90rpx;
+  text-align: center;
+  color: #a6a398;
+  font-size: 34rpx;
+  height: 80rpx;
+  width: 400rpx;
+  /* padding-left: 10rpx;
+  padding-right: 10rpx; */
+  line-height: 80rpx;
+  margin-left: 170rpx;
+  letter-spacing: 2rpx;
+  font-weight: 500;
+  background: rgba(253,248,232, 1);
+}
+.btn-post{
+  border-radius: 80rpx;
+  height: 80rpx;
+  color: white;
+  font-size: 34rpx;
+  background-color: rgba(242,147,69, 1);
+  margin-top: 40rpx;
+  width: 400rpx;
+  line-height: 80rpx;
+  letter-spacing: 2rpx;
+}
+
+.share{
+  position: fixed;
+  z-index: 120;
+  width: 100%;
+  height: auto;
+  bottom: 20rpx;
+  left: 0rpx;
+  
+}
+.btn-share{
+  height: 60rpx;
+  border-radius: 60rpx;
+  width: 560rpx;
+  color: white;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  margin-bottom: 30rpx;
+  background-color: #1AAD19;
+  letter-spacing: 2rpx;
+}
+
+.myAudio{
+    display: none;  
+  color: blue
+}
+
+.hide{
+  display: none;
+}
+
+.edit-bg{
+  position: relative;
+  margin-top: 10rpx;
+  width: 600rpx;
+  height: 710rpx;
+  margin-left: 75rpx;
+}
+.edit-box{
+  position: absolute;
+  top: 290rpx;
+  left: 0;
+  z-index: 127;
+  width: 100%;
+
+}

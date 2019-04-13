@@ -1,0 +1,64 @@
+<view class="headLine ">
+  
+
+  <view class="headLineWra " wx:for="{{headLineList}}" bindtap="jumpDetails" data-Id="{{item.id}}">
+
+
+<view class="kpl">
+
+    <view class="headLineContent ">
+      <view class="headLineTitle">
+        {{item.name}}
+      </view>
+      <view class="headLineInfor">
+        <view class="two">
+          {{item.digest}}
+        </view>
+
+      </view>
+    </view>
+    <view class="arrowsBox box box-tb box-pack-center">
+      <image src="{{item.photo}}"></image>
+    </view>
+
+
+
+ </view> 
+
+
+
+
+<view class="nones">
+        <view class="headLineSources">
+          来源：{{item.source}}
+        </view>
+
+      <view class="headLineSource">
+        {{item.addtime}}
+      </view>
+
+
+
+</view>
+  </view>
+
+
+
+
+
+
+
+
+
+
+</view>
+
+
+
+
+
+<view class="moreButton" bindtap="loadMore">
+  点击加载更多↓
+
+
+</view>

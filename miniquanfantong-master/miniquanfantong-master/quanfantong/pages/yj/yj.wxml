@@ -1,0 +1,11 @@
+<view class="cont">
+   <view class="ckk">
+      <view class="cll" wx:for="{{shy}}" bindtap="shy">
+          <view class="clm">
+   谁谁谁提现1000块
+          </view>
+            <view class="cx">2017-10-4</view>
+      </view>
+ </view>
+
+</view>

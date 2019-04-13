@@ -1,0 +1,59 @@
+<view class="cont">
+  <!--<view class="tab-left" bindtap="tabFun">
+    <view class="swiper-tab-list {{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0">余额充值</view>
+    <view class="swiper-tab-list {{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd01" data-id="1">余额提现</view>
+  </view>-->
+
+  <view class="tab-right">
+    <!--1-->
+    <!--待付款-->
+    <view class="right-item {{tabArr.curBdIndex=='0'? 'active' : ''}}">
+      <view class="hk">
+        <view class="hk_one">
+          <image class="src" src="../../images/dfk.png"></image> 账号余额</view>
+        <view class="hk_two">￥{{total}}</view>
+        <view class="hk_three">可用余额：￥{{keyong}} 提现处理中：￥{{tixian}}</view>
+      </view>
+      <view class="pkk">
+        <view class="pk">
+          <image class="src" src="../../images/dfk.png"></image>
+          余额提现:
+        </view>
+        <input class="a" bindinput="getPrice"/>
+      </view>
+      <view class="ki"></view>
+      <view class="jk">
+        <view class="jk_l">提现余额不能大于每天微信的提现额度 
+        </view>
+            <button bindtap="ti">提现</button>
+        <!--<button bindtap="yj">余额明细</button>-->
+      </view>
+
+    </view>
+
+    <!--<view class="right-item {{tabArr.curBdIndex=='1'? 'active' : ''}}">
+<view class="hk">
+        <view class="hk_one">
+          <image class="src" src="../../images/dfk.png"></image> 账号余额</view>
+        <view class="hk_two">￥1000.00</view>
+        <view class="hk_three">可用余额：1000.00 提现处理中：0.00</view>
+      </view>
+      <view class="pkk">
+        <view class="pk">
+          <image class="src" src="../../images/dfk.png"></image>
+          余额提现:
+        </view>
+        <input class="a" />
+      </view>
+      <view class="ki"></view>
+      <view class="jk">
+        <view class="jk_l">充值余额不能大于每天微信的提现额度 充值余额不能大于每天微信的提现额度 充值余额不能大于每天微信的提现额度
+        </view>
+        <button>提现</button>
+        <button bindtap="yj">余额明细</button>
+      </view>
+    </view>-->
+
+
+  </view>
+</view>

@@ -1,0 +1,15 @@
+
+
+   <volist name="list" id="v">
+    <dl id="menu-system">
+        <dt><i class="Hui-iconfont">&#xe62e;</i>&nbsp&nbsp {$v.name}<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+        <dd>
+            <ul> 
+                <volist name="v.sub" id="v2">
+                    <li><a data-href="<?php echo U("".$v2['ctrl']."/".$v2['action']."") ?>" data-title="{$v2.name}" href="javascript:void(0)">{$v2.name}</a></li>
+                </volist>
+            </ul>
+        </dd>
+    </dl>
+    </volist>
+    

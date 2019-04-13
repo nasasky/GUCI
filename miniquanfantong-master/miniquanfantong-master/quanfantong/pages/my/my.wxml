@@ -1,0 +1,54 @@
+<!--pages/user/user.wxml-->
+<view class="page">
+  <view class="cm">
+    <image class="c_png" src="http://i02.pictn.sogoucdn.com/3880257a48d0f614"></image>
+  </view>
+
+
+  <view class="cont_one">
+
+    <view class="one_png">
+      <image class='one_img' src="{{userInfo.avatarUrl}}"></image>
+    </view>
+
+    <view class="one_text">
+      <image class="pimg" src="../../images/vi.png"></image>
+      <text class="pig">{{userInfo.nickName}} </text>
+    </view>
+  </view>
+  <view class="xian"></view>
+  <view class="qbdd mt10" bindtap="powerDrawer" data-statu="open">
+    <navigator class="qb" url="../extension_centre/extension_centre">
+      <view class="">
+        <image class="shuoming" src="../../images/yj.png"></image>
+      </view>
+      <span class="font_14 c3">我的佣金</span>
+      <span class="fl_r c9 font_12 l_h20" hover-class="none"> ></span >
+    </navigator>
+    </view>
+<!--url="../record/record"-->
+   <view class="qbdd mt10" bindtap="powerDrawer" >
+    <navigator class="qb" url="../myprofile/myprofile">
+  <view class="">
+      <image class="shuoming" src="../../images/gr.png"></image> 
+  </view>
+     <span class="font_14 c3">个人信息</span>
+      <span class="fl_r c9 font_12 l_h20" hover-class="none"> ></span >
+    </navigator>
+    </view>
+
+
+  <view class="qbdd mt10">
+    <navigator url="../choose/choose" class="qb">
+      <view class="">
+        <image class="shuoming" src="../../images/fuwu.png"></image>
+      </view>
+      <span class="font_14 c3">服务中心</span>
+      <span class="fl_r c9 font_12 l_h20" hover-class="none"> ></span>
+    </navigator>
+  </view>
+</view>
+
+
+
+

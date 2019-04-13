@@ -1,0 +1,43 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/sign/sign",
+    "pages/choose/choose",
+    "pages/myprofile/myprofile",
+    "pages/balance/balance",
+    "pages/available_commission/available_commission",
+    "pages/extension_centre/extension_centre",
+    "pages/my/my",
+    "pages/product/product",
+    "pages/login/login",
+    "pages/user/user",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f01825",
+    "navigationBarTitleText": "全返通",
+    "navigationBarTextStyle": "#ffffff"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#dd2727",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/shous.png",
+        "selectedIconPath": "images/shou.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/mys.png",
+        "selectedIconPath": "images/my.png",
+        "text": "个人中心"
+      }
+    ]
+  }
+}

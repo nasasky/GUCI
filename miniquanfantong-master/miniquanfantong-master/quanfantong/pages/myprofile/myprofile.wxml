@@ -1,0 +1,105 @@
+<view class="cont">
+<form bindsubmit="reg">
+   <view class="myphone">姓名:</view>
+       <view class="myphone_input">
+          <input  placeholder="请输入姓名" name="uname" value="{{info.uname}}"/>
+       </view>
+
+   <view class="myphone">手机号码:</view>
+       <view class="myphone_input">
+          <input  placeholder="请输入手机号" name="tel" value="{{info.tel}}"/>
+       </view>
+
+   <view class="myphone">微信号码:</view>
+       <view class="myphone_input">
+          <input  placeholder="请输入微信号" name="weixin" value="{{info.weixin}}"/>
+       </view>
+
+   <view class="myphone">银行名称:</view>
+       <view class="myphone_input">
+          <input  placeholder="请输入银行名称" name="bankname" value="{{info.bankname}}"/>
+       </view>
+
+   <view class="myphone">银行卡号:</view>
+       <view class="myphone_input">
+          <input  placeholder="请输入银行卡号" name="bankid" value="{{info.bankid}}"/>
+       </view>
+
+
+   <view class="myphone">性别选择:</view>
+
+
+<!--一-->
+
+<view class="tab-left" bindtap="tabFun">
+
+  <view class="{{tabArr.curHdIndex=='0'? 'active' : ''}}" id="tab-hd01" data-id="0">保密</view>
+
+  <view class="{{tabArr.curHdIndex=='1'? 'active' : ''}}" id="tab-hd02" data-id="1">男</view>
+
+  <view class="{{tabArr.curHdIndex=='2'? 'active' : ''}}" id="tab-hd03" data-id="2">女</view>
+
+</view> 
+
+
+
+<!--二-->
+<checkbox-group class="group" bindchange="checkboxChanges">
+    <view class="label-1" wx:for-items="{{checkboxItems}}">
+        
+        <label>
+            <checkbox hidden value="{{item.name}}" checked="{{item.checked}}"></checkbox>
+            <view class="label-1__icon">
+                <view class="label-1__icon-checked" style="opacity:{{item.checked ? 1: 0}}">
+                </view>
+            </view>
+        </label>
+    </view>
+
+</checkbox-group>
+
+
+
+<view class="section">
+   <view class="myphone">生日日期:</view>
+  <picker mode="date" value="{{info.birthday}}" start="1900-01-01" end="2017-09-01" bindchange="bindDateChange">
+    <view class="nb">
+      {{info.birthday?'':'请选择:'}} {{date?date:info.birthday}}
+    </view>
+  </picker>
+</view>
+
+
+
+
+
+<view class="section">
+   <view class="myphone">地区选择:</view>
+   <view class="bb">
+  <picker bindchange="bindPickerChangeshengArr" value="{{shengIndex}}" range="{{shengArr}}" data-id="{{shengId[shengIndex]}}">
+    <view class="nb">
+    省-{{shengArr[shengIndex]?shengArr[shengIndex]:info.shengname}}
+    <input hidden="true" name="province" value="{{shengArr[shengIndex]}}"/>
+    </view>
+  </picker>
+
+  <picker bindchange="bindPickerChangeshiArr" value="{{shiIndex}}" range="{{shiArr}}">
+    <view class="nb" >
+    市-{{shiArr[shiIndex]?shiArr[shiIndex]:info.cityname}}
+    <input hidden="true" name="city" value="{{shiArr[shiIndex]}}"/>
+    </view>
+  </picker>
+
+  <picker bindchange="bindPickerChangequArr" value="{{quIndex}}" range="{{quArr}}">
+    <view class="nb" >
+    区-{{quArr[quIndex]?quArr[quIndex]:info.quyuname}}
+    <input hidden="true" name="town" value="{{quArr[quIndex]}}"/>
+    </view>
+  </picker>
+
+</view>
+</view>
+
+       <button class="but"  form-type="submit" >保存</button>
+  </form>
+</view>

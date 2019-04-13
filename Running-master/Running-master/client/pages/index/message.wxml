@@ -1,0 +1,87 @@
+<view class='main-content'>
+  <view class='main-content-title'>
+    <view class='main-content-title-head'>
+      <image src="{{messageList.avatarUrl}}" data-id="{{messageList.id}}" bindtap='gotowho'  data-name="{{messageList.nickName}}"></image>
+      <view class='main-content-title-detail'>
+        <text>{{messageList.nickName}}</text>
+        <view class='main-content-title-detail-footer'>
+          <text>{{messageList.date}}\t</text>
+          <text>{{messageList.time}}\t</text>
+          <text wx:if="{{messageList.school}}">来自[{{messageList.school}}]</text>
+          <text wx:else>\n</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='main-content-body'>
+    <view class='main-content-body-text'>
+      {{messageList.content}}
+    </view>
+    <view class='main-content-body-pic'>
+      <view class='main-content-body-pic-box' wx:for="{{messageList.indexPic}}" wx:for-item="itemPic" wx:if="{{index<9 && messageList.indexPic != ''}}" wx:key="id">
+        <image src='{{itemPic}}'  mode="aspectFill" bindtap='viewPic' data-src='{{itemPic}}'></image>
+      </view>
+    </view>
+   <view class='main-content-body-address'  wx:if="{{messageList.planAddress != '请选择约跑地点'}}">
+      <image src='{{imagePath}}/index-address.png'></image>
+      <text>{{messageList.planAddress}}</text>
+    </view>
+  </view>
+  <!--conter footer  -->
+  <view class='main-content-footer weui-flex'>
+    <button class='weui-flex__item' open-type='share'>
+      <image src='{{imagePath}}/index-hand.png'></image>分享</button>
+      <button class='weui-flex__item' bindtap='comment' data-id="{{messageList.planId}}">
+          <image src='{{imagePath}}/index-message.png'></image>{{commentNumber}}</button>
+      <button class='weui-flex__item' bindtap='goodPlan' data-status="{{messageList.status}}" wx:if="{{userInfo}}">
+          <image class='sex' src="../../images/{{messageList.status==0 ? 'index-good-before.png': 'index-good.png'}}"></image>
+          {{messageList.goodNumber}}
+      </button>
+  </view>
+</view>
+<!--评论区  -->
+<view class='comment'>
+  <view class='comment-title'>
+    <text>评论 {{commentNumber}} 条</text>
+  </view>
+  <!--回复内容  -->
+  <view class='comment-body' wx:for="{{comment}}" wx:key="{{item.id}}"  bindtap='havePersonComment' data-id='{{item.id}}' data-answerId="{{item.answerId}}" data-name="{{item.nickName}}">
+    <view class='comment-head'>
+      <image src="{{item.avatarUrl}}" data-id="{{item.id}}" catchtap='gotowho'  data-name="{{item.nickName}}"></image>
+    </view>
+    <view class='comment-content'>
+      <view class='comment-content-head'>
+        <text>{{item.nickName}} ({{comment.length - index}}楼)</text>
+        <view class='comment-content-head-body'>{{item.date}}\t<text wx:if="{{item.school}}">来自[{{item.school}}]</text></view>
+      </view>
+      <view class='comment-content-body'>
+        <text>{{item.content}}</text>
+        <view>
+        <view class='comment-content-review'  wx:if="{{item.zpl.length}}">
+        <view wx:for="{{item.zpl}}" wx:key="reply.id" wx:for-item="zpl" catchtap='replyWho' data-id='{{zpl.id}}' data-answerId="{{zpl.answerId}}" data-name="{{zpl.pinlunren}}">
+        <text class='reply'>{{zpl.pinlunren}}</text>回复<text class='reply'>{{zpl.hf}}</text>:{{zpl.content}}
+        </view>
+        </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!--底部键盘  -->
+<view class='inputBottom'>
+<input type="text" class="weui-search-bar__input" placeholder='{{commentPlaceholder}}' focus='{{inputFocus}}' bindinput="inputTyping" value='{{inputVal}}' cursor-spacing='20'/>
+<button bindtap='answer'>回复</button>
+</view>
+
+<!-- 自定义模态框  -->
+<view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modal-dialog" wx:if="{{showModal}}">
+  <view class="modal-title">选择</view>
+  <view class="modal-content">
+    <view class='modal-text' bindtap='haveCommentOk' wx:if="{{modalShow}}">回复</view>
+    <block wx:if="{{userInfo != ''}}">
+     <view class='modal-text'  wx:if="{{!modalShow}}" bindtap='deleteAnswer'>删除本评论</view> 
+    </block> 
+  </view>
+</view>

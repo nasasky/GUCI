@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='header'>
+    <image src="../../imgs/index.jpg" class="indexBGIMG" background-size="cover"></image>
+    <view class="userinfo-avatar-box" animation="{{animationData}}" catchtap="userAvatarTap">
+     <image  animation="{{userAvatarAnimation}}"  bindtouchstart="userAvatarTouch"  bindtouchend="userAvatarTouchend"  bindtouchmove="userAvatarTouchMove"   class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+  </view>
+  <view class='content'>
+    <block wx:key="{{index}}" wx:for="{{records}}">
+        <view wx:if="{{index == 0 || (item.date != records[index-1].date)}}" class="record">
+          <view class="record-date">
+            <text class="record-date-text">{{item.date}}日</text>
+            <text class="record-date-statistics">{{statistics[item.uniqueDateKey]}}元</text>
+          </view>
+          <view class="record-item">
+            <image src="{{item.iconUrl}}" class="record-item-icon" catchtap="recordChange" data-type-code="{{item.typeCode}}" data-money="{{item.money}}" data-timestamp="{{item.timestamp}}" data-uniquedatekey="{{item.uniqueDateKey}}" data-year="{{item.year}}" data-month="{{item.month}}" data-date="{{item.date}}"></image>
+            <text class='record-item-name'>{{item.name}}</text>
+            <text class="record-item-text">{{item.money}}元</text>
+          </view>
+        </view>
+        <view wx:else class="record">
+          <view class="record-item">
+            <image src="{{item.iconUrl}}" class="record-item-icon" catchtap="recordChange" data-type-code="{{item.typeCode}}" data-money="{{item.money}}" data-timestamp="{{item.timestamp}}" data-uniquedatekey="{{item.uniqueDateKey}}" data-year="{{item.year}}" data-month="{{item.month}}" data-date="{{item.date}}"></image>
+            <text class='record-item-name'>{{item.name}}</text>
+            <text class="record-item-text">{{item.money}}元</text>
+          </view>
+        </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,40 @@
+<view class="container" >
+
+  <view class="cont_a" >
+    <view class="cont_aa">
+      <image src="{{info.logo}}"></image>
+    </view>
+    <view class="cont_bb">
+      <view class="a">{{info.name}}</view>
+       <view class=" b ">{{info.digest}}</view> 
+      <view class="c ">推荐指数：{{info.score}}</view>
+    </view>
+  </view>
+
+
+  <view class="cont_b"></view>
+  <!--介绍-->
+  <view>
+    <import src="../../wxParse/wxParse.wxml"/> 
+    <view class="wxParse">
+          <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+    </view>
+  </view>
+
+  <view class="cont_d"></view>
+
+  <view class="ma">平台二维码</view>
+
+  <view class="wei">
+    <block wx:if="{{info.myqrcode_img && info.myqrcode_img!=''}}">
+      <image src="{{info.myqrcode_img}}" bindtap="preview" data-url="{{info.myqrcode_img}}"></image>
+    </block>
+    <block wx:else>
+      <view class="canvs">
+        <canvas canvas-id="qrcode"  bindtap="preview" data-url="{{info.myqrcode_url}}"/>
+      </view>
+    </block>
+  </view>
+
+
+</view>

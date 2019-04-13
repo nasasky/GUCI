@@ -1,0 +1,127 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                 <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>  
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+
+                   <view class="weui-cells weui-cells_after-title">
+                     <view class="weui-cell">
+                        <view class="weui-cell__hd">
+                            <image class='headimage' src="{{who.avatarUrl}}" bindtap="previewImg"></image>
+                        </view>
+                        <view class="weui-cell__bd">
+                        <view>{{who.nickName}}</view>
+                        <view>
+                          <image class='sex' src="../../images/{{who.gender==1 ? 'man.png': who.gender==2 ? 'woman.png':'n.png'}}"></image>
+                          <text class='age'>{{age}}</text>
+                        </view> 
+                        </view>
+                        <view class="weui-cell__ft">
+                          <block wx:if="{{who.yiguanzhu && who.xianghuguanzhu}}">
+                            <button  bindtap="tapXianghuGuanzhu" class="weui-btn mini-btn" type="primary" plain size="mini">相互关注</button>
+                          </block>
+                          <block   wx:elif="{{who.yiguanzhu}}">
+                            <button bindtap="tapQuxiaoGuanzhu" class="weui-btn mini-btn" type="primary" plain size="mini">已关注</button>
+                          </block>
+                          <block   wx:else>
+                            <button bindtap="tapGuanzhu" class="weui-btn mini-btn" type="primary" plain size="mini">关注</button>
+                          </block>
+                        </view> 
+                     </view>
+                     <navigator url="/pages/user/myfans?title={{who.nickName}}的粉丝&userid={{who.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <view class="weui-cell__hd">
+                            <image src="../../images/fensi_blue.png" class='title'></image>
+                        </view>
+                        <view class="weui-cell__bd">粉丝</view>
+                        <view class="weui-cell__ft weui-cell__ft_in-access">查看</view>
+                     </navigator>
+                     <navigator url="/pages/user/guanzhu?title={{who.nickName}}的关注&userid={{who.id}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                        <view class="weui-cell__hd">
+                            <image src="../../images/guanzhu-blue.png" class='title'></image>
+                        </view>
+                        <view class="weui-cell__bd">关注</view>
+                        <view class="weui-cell__ft weui-cell__ft_in-access">查看</view>
+                     </navigator>
+                     <view class="weui-cell">
+                      <view class="weui-cell__hd">
+                          <image src="../../images/shengri.png" class='title'></image>
+                      </view>
+                      <view class="weui-cell__bd">生日</view>
+                      <view class="weui-cell__ft">{{birth}}</view>
+                    </view>
+                    <view class="weui-cell">
+                      <view class="weui-cell__hd">
+                          <image src="../../images/telephone.png" class='title'></image>
+                      </view>
+                      <view class="weui-cell__bd">手机</view>
+                      <view class="weui-cell__ft">{{phone}}</view>
+                    </view>
+                    <view class="weui-cell">
+                      <view class="weui-cell__hd">
+                          <image src="../../images/school.png" class='title'></image>
+                      </view>
+                      <view class="weui-cell__bd">学校</view>
+                      <view class="weui-cell__ft">{{who.school}}</view>
+                    </view>
+                    <view class="weui-cell">
+                      <view class="weui-cell__hd">
+                          <image src="../../images/address.png" class='title'></image>
+                      </view>
+                      <view class="weui-cell__bd">地址</view>
+                      <view class="weui-cell__ft">{{who.address}}</view>
+                    </view>
+                  </view> 
+
+            
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+                  <block wx:if="{{!hisArticleList[0].content}}">
+                    <view class="weui-loadmore weui-loadmore_line" style='margin-top:200px;'>
+                          <view class="weui-loadmore__tips weui-loadmore__tips_in-line">还没有发布任何东西~</view>
+                      </view>
+                  </block>
+                  <navigator wx:for="{{hisArticleList}}" url="/pages/index/message?planId={{item.planId}}" class="weui-panel"   hover-class="none" wx:key="key">
+                    <view class="weui-panel__bd">
+                        <view class="weui-media-box weui-media-box_text">
+                            <view class="weui-media-box__desc">{{item.content}}</view>
+                            <view class="weui-media-box__info">
+                                <view class="weui-media-box__info__meta">赞({{item.zanNum}})</view>
+                                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">评论({{item.pingNum}})</view>
+                                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">{{item.date}}</view>
+                            </view>
+                        </view>
+                    </view>
+                  </navigator>                   
+                </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+                     <block wx:if="{{!hisRunData[0].time}}">
+                    <view class="weui-loadmore weui-loadmore_line" style='margin-top:200px;'>
+                          <view class="weui-loadmore__tips weui-loadmore__tips_in-line">ta有点小懒，还没有运动记录~</view>
+                      </view>
+                  </block>
+                  <navigator wx:for="{{hisRunData}}" class="weui-panel"   hover-class="none" wx:key="key">
+                    <view class="weui-panel__bd">
+                        <view class="weui-media-box weui-media-box_text">
+                            <view class="weui-media-box__desc">{{item.time}}</view>
+                            <view class="weui-media-box__info">
+                                <view class="weui-media-box__info__meta">运动用时：{{item.runtime}}分钟</view>
+                                <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">运动里程：{{item.kilometer}}千米</view>
+                                
+                            </view>
+                        </view>
+                    </view>
+                  </navigator>    
+
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

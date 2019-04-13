@@ -1,0 +1,18 @@
+<view class="new" >
+     <view class="biaoti">{{xin.name}}</view>
+
+<view class="riqi">
+        <text>{{xin.source}}</text>
+        <text>{{xin.addtime}}</text>
+</view>
+<import src="../../wxParse/wxParse.wxml" />
+    <view class="wxParse">
+      
+      
+      <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+
+
+
+    </view>
+
+</view>

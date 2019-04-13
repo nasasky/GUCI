@@ -1,0 +1,129 @@
+.markContainer{
+  background: #FFFFFF;
+}
+.book{
+  height: 7%;
+  background: #FFFFFF;
+  color: #838383;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.bookItemSelected{
+  color: #ecab66;
+}
+.bookItem{
+  margin: 0 5px 0 5px;
+  font-family: 'PingFangSC-Medium', 'PingFang SC Medium', 'PingFang SC';
+}
+image{
+  width:32px;
+  height:32px;
+}
+.preview{
+  box-sizing: border-box;
+  height: 7%;
+  width: 100%;
+  padding: 0 3% 0 5%;
+  display: flex;
+  background:#b2b24f;
+  flex-direction: row;
+  align-items: center;
+}
+.previewType{
+  height:100%;
+  width:50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.typeSelected{
+  margin: 0 0 0 15px;
+  color: #f7f3d2;
+  font-family: 'PingFangSC-Medium', 'PingFang SC Medium', 'PingFang SC';
+  font-size: 15px;
+}
+.inputMoney{
+  width:50%;
+  text-align: right;
+  color: #faf8d9;
+}
+.inputMoneyNumber{
+  width:70%;
+  text-align: left;
+  margin: 0 0 0 5px;
+}
+.type{
+  width: 100%;
+  height:43%;
+  max-height: 50%;
+  padding-top: 8px;
+  background: #FFFFFF;
+}
+.typeItem{
+  height: 70px;
+  width: 25%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.typeIcon{
+  width:32px;
+  height:32px;
+  border-radius: 16px;
+}
+.typeName{
+  color: #707070;
+  margin-top: 6px;
+  font-family: 'PingFangSC-Medium', 'PingFang SC Medium', 'PingFang SC';
+  font-size: 12px;
+}
+.note{
+  height: 10%;
+  background: #f2f2f2;
+  width: 100%;
+  padding: 0 10%;
+  margin: 0 auto 1px auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+}
+.calculate{
+  height: 40%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+.calculateOK{
+  width:20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'PingFangSC-Medium', 'PingFang SC Medium', 'PingFang SC';
+  font-size: 24px;
+  color: #7e7e7e;
+  background: #ebebeb;
+}
+.calculatePanel{
+  width: 80%;
+  height: 100%;
+  background: #FFFFFF;
+}
+.calculateKeyItem{
+  box-sizing: border-box;
+  height: 25%;
+  width: 33.3%;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ebebeb;
+  color: #7e7e7e;
+  border-width: 0 1px 1px 0;
+  border-color: #FFFFFF;
+  border-style: solid;
+}

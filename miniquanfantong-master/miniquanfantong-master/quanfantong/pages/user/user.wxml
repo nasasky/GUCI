@@ -1,0 +1,18 @@
+<view class="cont">
+  <view class="cont_a">
+    <image src="{{userInfo.avatarUrl}}">
+    </image>
+  </view>
+  <view class="cont_b">{{userInfo.nickName}}</view>
+  <radio-group class="radio-group">
+    <view class="cont_c" style="{{item.bot}}" bindtap="radioChange" wx:for="{{items}}" data-name="{{item.vip}}" data-price="{{item.yuan}}">
+      <image src="{{item.png}}"></image>
+      <text class="vip">{{item.vip}}</text>
+      <view class='yuan'>{{item.yuan}}</view>
+      <label class="radio">
+        <radio value="{{item.name}}" checked="{{item.checked}}" />
+      </label>
+    </view>
+  </radio-group>
+<view class="zhifu" bindtap="zhifu">立刻支付</view>
+</view>

@@ -1,0 +1,83 @@
+<view class=" cont">
+  <!--<view class="a">
+    <view class="a_a">我的分享力</view>
+  
+  </view>-->
+
+  <view class="b">
+    <view class="b_a">
+      <view class="b_a_a">可提现分享佣金（元）:</view>
+      <view class="b_d">
+        <view class="b_a_b">￥1000.00</view>
+        <view class="b_b" bindtap="yj">
+          查看明细>>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="b">
+    <view class="b_a">
+      <view class="b_a_a">可提现服务佣金（元）:</view>
+      <view class="b_d">
+        <view class="b_a_b">￥1000.00</view>
+        <view class="b_b" bindtap="yj">
+          查看明细>>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class="b">
+    <view class="b_a">
+      <view class="b_a_a">可提现管理费佣金（元）:</view>
+      <view class="b_d">
+        <view class="b_a_b">￥1000.00</view>
+        <view class="b_b" bindtap="yj">
+          查看明细>>
+        </view>
+      </view>
+    </view>
+  </view>
+ <view class="b">
+    <view class="b_a">
+      <view class="b_a_a">可提现配送费佣金（元）:</view>
+      <view class="b_d">
+        <view class="b_a_b">￥1000.00</view>
+        <view class="b_b" bindtap="yj">
+          查看明细>>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+ <view class="c">
+    <view class="c_a">
+      <view class="c_a_a">累计分享力:</view>
+
+        <view class="c_a_b">￥1000.00</view>
+  
+
+    </view>
+
+      <view class="c_b" bindtap="">
+          已申请余额:￥1110.00
+          <view class="c_g">待审核金额：￥100.00</view>
+        </view>
+
+
+  </view>
+
+
+
+
+
+
+
+
+
+
+  <view class="a_b" bindtap="ti">我要提现</view>
+</view>

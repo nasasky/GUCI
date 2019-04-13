@@ -1,0 +1,105 @@
+.a {
+  width: 100%;
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.a_a {
+  flex: 1.5;
+  margin: 20rpx 0;
+  text-align: center;
+  font-size: 38rpx;
+}
+
+.a_b {
+  border: 1rpx solid #ccc;
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 68rpx;
+  height: 67rpx;
+  border-radius: 10rpx;
+  width: 36%;
+  margin: 0 auto;
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+}
+
+.b_d {
+  display: flex;
+  margin-top: 70rpx;
+  margin-bottom: 20rpx;
+}
+
+.b_a_a {
+  padding: 20rpx;
+}
+
+.b_a_b {
+  flex: 1;
+  text-align: center;
+  color: red;
+  font-size: 44rpx;
+}
+
+.b {
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.b_a {
+  flex: 1.5;
+}
+
+.b_b {
+  flex: 1;
+  text-align: right;
+  font-size: 30rpx;
+  line-height: 50rpx;
+  margin-right: 10rpx;
+}
+
+/*c*/
+
+.c{
+  display: flex;
+}
+
+.c_d {
+  display: flex;
+
+  margin-bottom: 20rpx;
+}
+
+.c_a_a {
+  padding: 20rpx;
+  padding-bottom: 20rpx;
+  font-size: 35rpx;
+}
+
+.c_a_b {
+  flex: 1;
+  text-align: center;
+  color: red;
+  font-size: 35rpx;
+}
+
+.c {
+  display: flex;
+  border-bottom: 1rpx solid #ccc;
+  /*padding-bottom: 30rpx;*/
+}
+
+.c_a {
+  flex: 1.5;
+}
+
+.c_b {
+  flex: 1.3;
+  text-align: center;
+font-size: 32rpx;
+  padding:30rpx 0;
+
+}
+.c_g{
+  padding-top: 20rpx;
+}
